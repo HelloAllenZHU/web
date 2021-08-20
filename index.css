@@ -1,0 +1,13 @@
+@keyframes myfirst
+{
+    from {background: red;}
+    to {background: yellow;}
+}
+ 
+
+div {
+    border: 1px solid red;
+    border-radius: 15px;
+    box-shadow: 10px 10px 5px #888888;
+    animation: myfirst 5s;
+}
