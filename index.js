@@ -17,15 +17,26 @@ const root = {
             this.age--;
         }
     },
-    props() {
 
-    },
+    // 使用组件时，需要传递给组件的参数
+    props: ['title', 'msg'],
+
+    // 计算属性
     computed() {
 
     },
+
+    // 侦听器
+    watch: {
+
+    },
+
+    // 
     inject() {
 
     },
+
+    // 
     setup() {
 
     },
