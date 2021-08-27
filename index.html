@@ -1,13 +1,42 @@
 <!DOCTYPE html>
 <html>
+
     <head>
+        <meta charset="utf-8">
         <title>标题</title>
         <script src="https://unpkg.com/vue@next"></script>
         <link rel="stylesheet" type="text/css" href="index.css">
     </head>
-    <body>
-        <div id="app">
-            <p>学习</p>
-        </div>
-    </body>
+
+<body>
+    <div id="app">
+        <p v-if="show">{{ name }}</p>
+        <p>{{ age }}</p>
+        <a v-bind:href="url">{{ web }}</a>
+
+    </div>
+
+    <script>
+        const root = {
+             // 组件中的data属性
+            data() {
+                return {
+                    name: "Allen",
+                    age: 10,
+                    web: "网易",
+                    url: "https://www.163.com",
+                    show: true
+                }
+            },
+        };
+
+        // 创建应用实例，并挂载到app根DOM节点上
+        const app = Vue.createApp( root );//.mount("#app");
+
+        // 挂载DOM根节点
+        const vm  = app.mount("#app");
+
+    </script>
+</body>
+
 </html>

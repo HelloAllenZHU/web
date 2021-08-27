@@ -8,6 +8,12 @@ const root = {
         }
     },
 
+    // 定义局部组件
+    components: {
+        //"component-a" :ComponentA,
+        //"component-a" :ComponentB
+    },
+
     // 组件中自定义的函数
     methods: {
         add() {
@@ -18,7 +24,7 @@ const root = {
         }
     },
 
-    // 使用组件时，需要传递给组件的参数
+    // 使用组件时，需要传递给组件的参数(自定义组件的属性)
     props: ['title', 'msg'],
 
     // 计算属性
