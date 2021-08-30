@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>菜单</title>
+        
+    </head>
+    <body>
+        <div id="app" v-cloak>
+            <li v-for="menu in menus" v-on:mouseover="menu.show = !menu.show" v-on:mouseout="menu.show = !menu.show">
+                <a :href="menu.url" >
+					{{menu.name}}
+				</a>
+				<ul v-show="menu.show">
+					<li v-for="subMenu in menu.subMenus">
+						<a :href="subMenu.url">{{subMenu.name}}</a>
+					</li>
+				</ul>
+            </li>
+        </div>
+        <script src="https://unpkg.com/vue@next"></script>
+        <script>
+            const root = {
+                data() {
+                    return {
+                            menus:[
+                                {
+                                    name: "我的淘宝",
+                                    url: "#",
+                                    show: false,
+                                    subMenus: [
+                                        { 
+                                            name: "已买到的宝贝", 
+                                            url: "#"
+                                        },
+                                        { 
+                                            name: "已卖出的宝贝", 
+                                            url: "#"
+                                        }
+                                    ]
+                                },
+                                {
+                                    name: "我的收藏",
+                                    url: "#",
+                                    show: false,
+                                    subMenus: [
+                                        { 
+                                            name: "已收藏的宝贝", 
+                                            url: "#"
+                                        },
+                                        { 
+                                            name: "已收藏的店铺", 
+                                            url: "#"
+                                        }
+                                    ]
+                                }
+                            ]
+                    }
+                },                
+            };
+            const vm = Vue.createApp( root ).mount( "#app" );
+        </script>
+    </body>
+</html>

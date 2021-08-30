@@ -1,42 +1,45 @@
 <!DOCTYPE html>
 <html>
-
     <head>
         <meta charset="utf-8">
         <title>标题</title>
+        <!-- 引入样式 -->
+        <link rel="stylesheet" href="https://unpkg.com/element-plus/dist/index.css">
+        <!-- 引入 Vue -->
         <script src="https://unpkg.com/vue@next"></script>
-        <link rel="stylesheet" type="text/css" href="index.css">
+        <!-- 引入UI库 -->
+        <script src="https://unpkg.com/element-plus"></script>
     </head>
+    <body>
+        <div id="app">
+            <el-button>{{ name }}</el-button>
+            <el-calendar v-model="value"></el-calendar>
+        </div>
 
-<body>
-    <div id="app">
-        <p v-if="show">{{ name }}</p>
-        <p>{{ age }}</p>
-        <a v-bind:href="url">{{ web }}</a>
+        <script>
+            const root = {
+                // 组件中的data属性
+                data() {
+                    return {
+                        name: "Allen",
+                        age: 10,
+                        web: "网易",
+                        url: "https://www.163.com",
+                        show: true,
+                        value: new Date()
+                    }
+                },
+            };
 
-    </div>
+            // 创建应用实例，并挂载到app根DOM节点上
+            const app = Vue.createApp( root )//.mount("#app");
 
-    <script>
-        const root = {
-             // 组件中的data属性
-            data() {
-                return {
-                    name: "Allen",
-                    age: 10,
-                    web: "网易",
-                    url: "https://www.163.com",
-                    show: true
-                }
-            },
-        };
+            // 使用ElementPlus
+            app.use( ElementPlus );
 
-        // 创建应用实例，并挂载到app根DOM节点上
-        const app = Vue.createApp( root );//.mount("#app");
+            // 挂载DOM根节点
+            const vm  = app.mount("#app");
 
-        // 挂载DOM根节点
-        const vm  = app.mount("#app");
-
-    </script>
-</body>
-
+        </script>
+    </body>
 </html>
