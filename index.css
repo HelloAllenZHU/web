@@ -1,13 +1,54 @@
-@keyframes myfirst
-{
-    from {background: red;}
-    to {background: yellow;}
+@import url("https://unpkg.com/element-plus/dist/index.css");
+
+.el-header,
+.el-footer {
+    background-color: #cccccc;
+    color: var(--el-text-color-primary);
+    text-align: center;
+    line-height: 60px;
 }
- 
+
+.el-aside {
+    background-color: #D3DCE6;
+    color: var(--el-text-color-primary);
+    text-align: center;
+    line-height: 200px;
+}
+
+.el-main {
+    background-color: #E9EEF3;
+    color: var(--el-text-color-primary);
+    text-align: center;
+    line-height: 160px;
+}
+
+body>.el-container {
+    margin-bottom: 40px;
+}
+
+.el-container:nth-child(5) .el-aside,
+.el-container:nth-child(6) .el-aside {
+    line-height: 260px;
+}
+
+.el-container:nth-child(7) .el-aside {
+    line-height: 320px;
+}
+
+/*@keyframes myfirst {
+    from {
+        background: red;
+    }
+
+    to {
+        background: yellow;
+    }
+}
+
 
 div {
     border: 1px solid red;
     border-radius: 15px;
     box-shadow: 10px 10px 5px #888888;
     animation: myfirst 5s;
-}
+}*/
